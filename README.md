@@ -14,7 +14,7 @@
 ## HTTP-запити
 
 ```text
-http://hn.algolia.com/api/v1/search
+https://hn.algolia.com/api/v1/search
 ```
 
 - Форма пошуку `SearchForm`

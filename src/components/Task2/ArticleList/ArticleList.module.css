@@ -1,0 +1,137 @@
+.articleList {
+  padding: 24px 0;
+}
+
+.grid {
+  display: grid;
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card {
+  height: 100%;
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 34px rgba(15, 23, 42, 0.12);
+}
+
+.media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, #e2e8f0, #f8fafc);
+}
+
+.media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #475569;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.description {
+  margin: 0;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.footer {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.author {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #334155;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 120ms ease, box-shadow 120ms ease, filter 120ms ease;
+}
+
+.link::after {
+  content: "→";
+  font-size: 1rem;
+}
+
+.link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.25);
+}
+
+.link:active {
+  transform: translateY(0);
+  box-shadow: none;
+  filter: brightness(0.95);
+}
+
+.link:focus-visible {
+  outline: 3px solid rgba(79, 70, 229, 0.35);
+  outline-offset: 3px;
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

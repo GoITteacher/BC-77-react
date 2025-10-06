@@ -1,0 +1,69 @@
+.searchNewsForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: min(420px, 100%);
+  padding: 16px 20px;
+  margin: 0 auto 24px;
+  background-color: #f7f7fa;
+  border: 1px solid #d8dcf0;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+}
+
+.searchNewsForm label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.searchNewsForm input {
+  height: 44px;
+  padding: 0 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: #0f172a;
+  font-size: 0.95rem;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.searchNewsForm input:focus,
+.searchNewsForm input:focus-visible {
+  border-color: #2563eb;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+.searchNewsForm input::placeholder {
+  color: #94a3b8;
+}
+
+.searchNewsForm button {
+  align-self: flex-start;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease, filter 120ms ease;
+}
+
+.searchNewsForm button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.25);
+}
+
+.searchNewsForm button:active {
+  transform: translateY(0);
+  box-shadow: none;
+  filter: brightness(0.95);
+}
+
+.searchNewsForm button:focus-visible {
+  outline: 3px solid rgba(79, 70, 229, 0.35);
+  outline-offset: 3px;
+}
