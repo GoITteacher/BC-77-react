@@ -26,3 +26,15 @@ http://hn.algolia.com/api/v1/search
 - Структура файлів та поділ відповідальності
 
 > Нагадати що в LMS є матеріал про змінні оточення та `.env`
+
+---
+
+## API для практики
+
+- [Drinkify](https://drinkify.b.goit.study/api-docs/)
+- [Articles](https://newsapi.org/docs/endpoints/everything)
+- [Tickets](https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/)
+- [Search API](https://developer.nytimes.com/apis)
+- [Movies](https://developer.themoviedb.org/docs/getting-started)
+- [Rick and Morty](https://rickandmortyapi.com/documentation/#rest)
+- [Pokemons](https://pokeapi.co/)
