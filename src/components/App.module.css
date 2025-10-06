@@ -1,0 +1,5 @@
+.badge {
+  display: inline-flex;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
