@@ -1,0 +1,11 @@
+.list {
+  margin: 0;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
