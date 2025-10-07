@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 // import Timer from "./Timer";
 // import Sidebar from "./Sidebar";
 import Modal from "./Modal/Modal";
+import Pokemons from "./Pokemons/Pokemons";
 // import CharacterWidget from "./CharacterWidget";
 
 export default function App() {
@@ -21,19 +22,20 @@ export default function App() {
 
   return (
     <>
+      <Pokemons />
       {/* <CharacterWidget /> */}
 
       {/* <button onClick={() => setIsVisible(!isVisible)}>Toggle Timer</button>
       {isVisible && <Timer />} */}
 
-      <button onClick={() => setIsVisible(!isVisible)}>Open</button>
+      {/* <button onClick={() => setIsVisible(!isVisible)}>Open</button> */}
       {/* {isVisible && <Sidebar onClose={handleClose} />} */}
-
+      {/* 
       {isVisible && (
         <Modal onClose={handleClose}>
           <h1>Hello modal</h1>
         </Modal>
-      )}
+      )} */}
     </>
   );
 }
