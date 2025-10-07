@@ -5,13 +5,33 @@
  * - Очистити слухач при розмонтуванні
  */
 
+import { useEffect } from "react";
 import css from "./Sidebar.module.css";
 
-export default function Sidebar() {
+interface SidebarProps {
+  onClose: () => void;
+}
+
+export default function Sidebar({ onClose }: SidebarProps) {
+  useEffect(() => {
+    const handleClose = (e: KeyboardEvent) => {
+      console.log(e);
+
+      if (e.code === "Escape") {
+        onClose();
+      }
+    };
+    window.addEventListener("keydown", handleClose);
+
+    return () => {
+      window.removeEventListener("keydown", handleClose);
+    };
+  }, [onClose]);
+
   return (
     <div className={css.wrapper}>
       <div className={css.sidebar}>
-        <button>Close</button>
+        <button onClick={onClose}>Close</button>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
           voluptatum culpa modi? Quaerat repellat sit error officia dolore?

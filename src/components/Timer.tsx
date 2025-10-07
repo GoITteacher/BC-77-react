@@ -5,6 +5,25 @@
  * time.toLocaleTimeString()
  */
 
+import { useEffect, useState } from "react";
+
 export default function Timer() {
-  return <p>{"time"}</p>;
+  const [time, setTime] = useState(new Date());
+
+  useEffect(() => {
+    console.log("ADD INTERVAL");
+
+    const id = setInterval(() => {
+      console.log("SET NEW TIME");
+      setTime(new Date());
+    }, 1000);
+
+    return () => {
+      console.log("Clear Interval");
+
+      clearInterval(id);
+    };
+  }, []);
+
+  return <p>{time.toLocaleTimeString()}</p>;
 }

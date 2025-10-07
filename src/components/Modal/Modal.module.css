@@ -1,0 +1,64 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background-color: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(3px);
+  z-index: 1000;
+  animation: fadeIn 150ms ease-out forwards;
+}
+
+.modal {
+  width: min(480px, 100%);
+  max-height: calc(100vh - 48px);
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.22);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+  animation: scaleIn 180ms ease-out forwards;
+}
+
+.modal > button {
+  align-self: flex-end;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 140ms ease-out, transform 140ms ease-out;
+}
+
+.modal > button:hover {
+  color: #0f172a;
+  transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.96);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
