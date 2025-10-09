@@ -12,3 +12,11 @@
 - Пагінація запитів
   - `placeholderData` та `keepPreviousData`
   - Бібліотека [React Paginate](https://www.npmjs.com/package/react-paginate)
+
+## Api
+
+- [Покемони](https://pokeapi.co/)
+- [Рецепти](https://tasty-treats-backend.p.goit.global/api-docs/)
+- [Продукти](https://food-boutique.b.goit.study/api-docs/)
+- [Коктелі](https://drinkify.b.goit.study/api-docs/)
+- [Книжки](https://books-backend.p.goit.global/api-docs/)
