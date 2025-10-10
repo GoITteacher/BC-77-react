@@ -1,24 +1,23 @@
 import { useId } from "react";
-import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
-// namespace import
-import * as Yup from "yup";
 import css from "./OrderForm.module.css";
+import { Field, Form, Formik, FormikHelpers, ErrorMessage } from "formik";
+
+import * as Yup from "yup";
 
 const OrderSchema = Yup.object().shape({
   username: Yup.string()
     .min(3, "Too Short!")
-    .required("This field is required"),
-  email: Yup.string()
-    .email("Must be email format")
-    .required("This field is required"),
-  delivery: Yup.string()
-    .oneOf(["pickup", "courier", "drone"], "Invalid method")
-    .required("Delivery method is required"),
+    .required("This field is required!!!"),
+  email: Yup.string().email("Must be email format"),
+  delivery: Yup.string().oneOf(
+    ["pickup", "courier", "drone"],
+    "Invalid method"
+  ),
   restrictions: Yup.array().of(
     Yup.string().oneOf(["vegan", "gluten-free", "nut-free"])
   ),
   deliveryTime: Yup.string().required("Select time"),
-  message: Yup.string().max(250, "Too Long!"),
+  message: Yup.string().max(300, "Too long!"),
 });
 
 interface FormValues {
@@ -39,60 +38,64 @@ const initialValues: FormValues = {
   message: "",
 };
 
-const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+const sleep = (ms: number) => new Promise((res) => setTimeout(res, ms));
 
 export default function OrderForm() {
-  const fieldId = useId();
+  const inputId = useId();
 
   const handleSubmit = async (
     values: FormValues,
     actions: FormikHelpers<FormValues>
   ) => {
-    await sleep(1000);
-    console.log("handleSubmit", values);
+    await sleep(2000);
+    console.log(values);
     actions.resetForm();
   };
 
-  // Render Prop
   return (
     <Formik
       initialValues={initialValues}
-      validationSchema={OrderSchema}
       onSubmit={handleSubmit}
+      validationSchema={OrderSchema}
     >
       {({ isSubmitting }) => {
         return (
           <Form className={css.form}>
             <fieldset className={css.fieldset}>
               <legend className={css.legend}>Client Info</legend>
-              <label htmlFor={`${fieldId}-username`} className={css.label}>
-                Name
-              </label>
-              <Field
-                type="text"
-                name="username"
-                id={`${fieldId}-username`}
-                className={css.input}
-              />
-              <ErrorMessage
-                name="username"
-                component="span"
-                className={css.error}
-              />
-              <label htmlFor={`${fieldId}-email`} className={css.label}>
-                Email
-              </label>
-              <Field
-                type="email"
-                name="email"
-                id={`${fieldId}-email`}
-                className={css.input}
-              />
-              <ErrorMessage
-                name="email"
-                component="span"
-                className={css.error}
-              />
+              <div className={css["input-wrapper"]}>
+                <label htmlFor={`${inputId}-username`} className={css.label}>
+                  Name
+                  <ErrorMessage
+                    name="username"
+                    component="span"
+                    className={css.error}
+                  />
+                </label>
+                <Field
+                  type="text"
+                  name="username"
+                  id={`${inputId}-username`}
+                  className={css.input}
+                />
+              </div>
+
+              <div className={css["input-wrapper"]}>
+                <label htmlFor={`${inputId}-email`} className={css.label}>
+                  Email
+                  <ErrorMessage
+                    name="email"
+                    component="span"
+                    className={css.error}
+                  />
+                </label>
+                <Field
+                  type="email"
+                  name="email"
+                  id={`${inputId}-email`}
+                  className={css.input}
+                />
+              </div>
             </fieldset>
 
             <fieldset className={css.fieldset}>
@@ -110,6 +113,7 @@ export default function OrderForm() {
                 <Field type="radio" name="delivery" value="drone" />
                 Drone delivery
               </label>
+
               <ErrorMessage
                 name="delivery"
                 component="span"
@@ -136,6 +140,7 @@ export default function OrderForm() {
                 <Field type="checkbox" name="restrictions" value="nut-free" />
                 Nut-free
               </label>
+
               <ErrorMessage
                 name="restrictions"
                 component="span"
@@ -143,13 +148,14 @@ export default function OrderForm() {
               />
             </fieldset>
 
-            <label htmlFor={`${fieldId}-deliveryTime`} className={css.label}>
+            <label htmlFor={`${inputId}-deliveryTime`} className={css.label}>
               Preferred delivery time
             </label>
+
             <Field
               as="select"
               name="deliveryTime"
-              id={`${fieldId}-deliveryTime`}
+              id={`${inputId}-deliveryTime`}
               className={css.input}
             >
               <option value="" disabled>
@@ -165,16 +171,16 @@ export default function OrderForm() {
               className={css.error}
             />
 
-            <label htmlFor={`${fieldId}-message`} className={css.label}>
+            <label htmlFor={`${inputId}-message`} className={css.label}>
               Additional message
             </label>
             <Field
               as="textarea"
               name="message"
               rows={4}
-              id={`${fieldId}-message`}
+              id={`${inputId}-message`}
               className={css.textarea}
-            />
+            ></Field>
             <ErrorMessage
               name="message"
               component="span"
@@ -182,7 +188,7 @@ export default function OrderForm() {
             />
 
             <button type="submit" className={css.button}>
-              {isSubmitting ? "Submitting your order..." : "Place order"}
+              {isSubmitting ? "Submiting your order" : "Place order"}
             </button>
           </Form>
         );

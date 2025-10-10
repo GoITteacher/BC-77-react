@@ -37,7 +37,11 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  margin-bottom: 12px;
+  margin-bottom: 30px;
+}
+
+.input-wrapper {
+  position: relative;
 }
 
 .textarea {
@@ -76,4 +80,7 @@
 .error {
   font-size: 14px;
   color: orangered;
+  /* position: absolute;
+  left: 0;
+  bottom: 10px; */
 }
