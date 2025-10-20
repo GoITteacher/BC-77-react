@@ -8,6 +8,7 @@ const Header = () => {
         <ul>
           <li>
             <Link href="/">Home</Link>
+            {/* <a href=""> </a>*/}
           </li>
           <li>
             <Link href="/about">About</Link>
