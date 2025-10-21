@@ -17,3 +17,10 @@ export const fetchTasks = async(title:string)=>{
     return res.data
 }
 
+
+export const deleteTask = async(id:string)=>{
+    const res = await axios.delete<Task[]>(`${BASE_URL}/${id}`);
+    return res.data
+}
+
+
