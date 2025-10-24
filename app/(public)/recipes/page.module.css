@@ -1,0 +1,53 @@
+.page {
+  display: grid;
+  gap: 36px;
+  padding: 60px clamp(16px, 5vw, 52px);
+  background: linear-gradient(120deg, rgba(190, 242, 100, 0.12), rgba(56, 189, 248, 0.12));
+  border-radius: 28px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 680px;
+}
+
+.eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.38em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: rgba(15, 23, 42, 0.6);
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.68;
+  color: rgba(15, 23, 42, 0.74);
+}
+
+.listArea {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 720px) {
+  .page {
+    padding: 48px clamp(12px, 6vw, 28px);
+    border-radius: 24px;
+  }
+
+  .hero {
+    gap: 14px;
+  }
+}

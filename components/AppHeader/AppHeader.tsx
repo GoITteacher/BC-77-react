@@ -18,7 +18,7 @@ export default function AppHeader() {
           <Link href="/quotes">Quotes</Link>
         </li>
         <li>
-          <Link href="/Todos">Todos</Link>
+          <Link href="/todos">Todos</Link>
         </li>
       </ul>
       <hr />
