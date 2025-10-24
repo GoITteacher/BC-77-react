@@ -5,7 +5,8 @@
   "scripts": {
     "start": "next dev --turbopack",
     "build": "next build --turbopack",
-    "lint": "eslint"
+    "lint": "eslint",
+    "push": "git cmp 'update'"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.90.5",

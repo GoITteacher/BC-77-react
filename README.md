@@ -1,34 +1,13 @@
 # Заняття 13 - Маршрутизація
 
-- Вкладені сторінки
-- Сторінка 404
-- Універсальні маршрути (catch-all routes)
-
-- Програмна навігація
-  - router.push()
-  - router.replace()
-  - router.back()
-  - router.forward()
-
-- Вкладені layout
-
 - Паралельні маршрути (слоти)
+- Перехоплення маршрутів для модалки
+  - створили @modal – для модалки
+  - додали default.tsx – обовʼязковий файл
+  - додали modal у RootLayout
+  - створили (.)notes/[id] – для перехоплення маршруту
+  - використали Modal з router.back()
+  - винесли @modal з (public routes) – щоб працювало
+  - перезапустили проєкт – обов’язково.
 
-https://otto-zimmermann.store/
-
-```text
-app/
-├── inbox/
-│   ├── layout.tsx
-│   ├── @main/
-│   │   └── default.tsx          ← контент
-│   └── @sidebar/
-│       ├── page.tsx          ← сайдбар
-│       ├── filters/
-│       │   └── page.tsx      ← фільтри
-│       ├── folders/
-│       │   └── page.tsx      ← шось якісь папки
-│       └── settings/
-│           └── page.tsx      ← налаштування
-
-```
+[Dummy Json Server](https://dummyjson.com/docs)
