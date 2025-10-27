@@ -1,13 +1,12 @@
-# Заняття 13 - Маршрутизація
+# Заняття 14 - Meta
 
-- Паралельні маршрути (слоти)
-- Перехоплення маршрутів для модалки
-  - створили @modal – для модалки
-  - додали default.tsx – обовʼязковий файл
-  - додали modal у RootLayout
-  - створили (.)notes/[id] – для перехоплення маршруту
-  - використали Modal з router.back()
-  - винесли @modal з (public routes) – щоб працювало
-  - перезапустили проєкт – обов’язково.
+- SEO
+- Мета-теги
+  - metadata
+  - generateMetadata
+- OG і Twitter мета-теги
+- Шрифти
+- Зображення з next/image
+- Lighthouse
 
-[Dummy Json Server](https://dummyjson.com/docs)
+<!-- https://cdn.pixabay.com/photo/2025/08/21/09/51/rouen-cathedral-9787080_1280.jpg -->
