@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import css from "./AppHeader.module.css";
 
@@ -9,7 +11,7 @@ export default function AppHeader() {
           <Link href="/">Home</Link>
         </li>
         <li>
-          <Link href="/products/beauty">Products</Link>
+          <Link href="/tasks">Tasks</Link>
         </li>
       </ul>
     </header>
