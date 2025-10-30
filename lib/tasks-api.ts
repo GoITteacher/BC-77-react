@@ -1,6 +1,5 @@
-import axios from "axios";
+import { nextApi } from "./api";
 
-axios.defaults.baseURL = "https://62584f320c918296a49543e7.mockapi.io";
 
 export interface Task {
   id: string;
@@ -10,11 +9,16 @@ export interface Task {
 }
 
 export const fetchTasks = async () => {
-  const res = await axios.get<Task[]>("/tasks");
+  const res = await nextApi.get<Task[]>("/tasks");
+  return res.data;
+};
+
+export const fetchTask = async (id:string) => {
+  const res = await nextApi.get<Task>(`/tasks/${id}`);
   return res.data;
 };
 
 export const createTask = async (taskText: string) => {
-  const res = await axios.post<Task>("/tasks", { text: taskText });
+  const res = await nextApi.post<Task>("/tasks", { text: taskText });
   return res.data;
-};
+}
