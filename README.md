@@ -1,7 +1,3 @@
-# Заняття 16 - API routes
+# Заняття 18 - Auth
 
-- Архітектура Next.js
-- Авторизація та автентифікація з кукі
-- Проблема CORS
-- BFF
-- API routes
+qwerty@gmail.ua
